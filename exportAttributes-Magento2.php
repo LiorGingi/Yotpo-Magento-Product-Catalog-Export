@@ -1,6 +1,6 @@
 <?php
 /*
- * Lior G., Yotpo Support, March 4st 2018.
+ * Lior G., Yotpo Support, March 4th 2018.
  * Yotpo Product Catalog Export Tool for Magento 2 - BETA v2.
  */
 
