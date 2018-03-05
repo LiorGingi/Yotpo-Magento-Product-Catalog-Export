@@ -1,7 +1,7 @@
 <?php
 /*
  * Lior G., Yotpo Support, March 4st 2018.
- * Yotpo Product Catalog Export Tool for Magento 2 - BETA v1.
+ * Yotpo Product Catalog Export Tool for Magento 2 - BETA v2.
  */
 
 use Magento\Framework\App\Bootstrap;
@@ -38,7 +38,7 @@ class Export{
 			$saveData['Product Description'] = $_product->getDescription();
 			$saveData['Product URL'] = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB).$_product->getUrlKey().'.html';
 
-			if ($_product->getImage() != 'no_selection'){ //Pull Image URL only in case there's a pic associated with the product
+			if (($_product->getImage() != 'no_selection') && ($_product->getImage() != NULL)){ //Pull Image URL only in case there's a pic associated with the product
 				$saveData['Product Image URL'] = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA).'catalog/product/'.$_product->getImage();
 			}
 			else { //If there's no image associated with the product, keep the column empty
